@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 15:10:30 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/03/28 19:53:09 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/03/28 20:07:32 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,22 @@ int PhoneBook::show_all()
 void Contact::print_contact(int index)
 {   
     std::cout << std::setw(10) << index << "|";
-    std::cout << std::setw(10) << first_name_.substr(0, 9) << "|";
-    std::cout << std::setw(10) << last_name_.substr(0, 9) << "|";
-    std::cout << std::setw(10) << nickname_.substr(0, 9) << std::endl;
+    if(first_name_.length() > 10)
+    {
+        std::cout << std::setw(9) << first_name_.substr(0, 9) << ".|";
+    }else{
+        std::cout << std::setw(10) << first_name_ << "|";
+    }
+    if(last_name_.length() > 10)
+    {
+        std::cout << std::setw(9) << last_name_.substr(0, 9) << ".|";
+    }else{
+        std::cout << std::setw(10) << last_name_ << "|";
+    }
+    if(last_name_.length() > 10)
+    {
+        std::cout << std::setw(9) << nickname_.substr(0, 9) << ".|";
+    }else{
+        std::cout << std::setw(10) << nickname_ << "|";
+    }
 }
