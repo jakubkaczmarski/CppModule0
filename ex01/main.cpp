@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 13:55:40 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/03/28 15:48:56 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/03/28 19:41:20 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int main()
             }
         }else if(command == "SEARCH")
         {
-
+            phone_book.show_all();
         }else if(command == "EXIT")
         {
             break;

@@ -6,14 +6,15 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 14:39:17 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/03/28 15:45:56 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/03/28 19:51:12 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 #include <iostream>
-
+#include <iomanip>
+#include <string>
 class Contact{
     private:
         std::string first_name_;
@@ -23,6 +24,7 @@ class Contact{
         std::string darkest_secret_;
     public:
         void add_contact(std::string f_name, std::string l_name, std::string nick_name,std::string phone_num_, std::string darkest_secret_ );
+        void print_contact(int index);
 };
 
 class PhoneBook{
@@ -43,6 +45,7 @@ class PhoneBook{
         void set_phone_num(std::string phone_num);
         void set_secret(std::string darkest_secret);
         int get_index();
+        int show_all();
 };
 
 

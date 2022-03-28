@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 15:10:30 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/03/28 15:47:43 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/03/28 19:53:09 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,19 @@ void Contact::add_contact(std::string f_name, std::string l_name, std::string ni
 int PhoneBook::get_index()
 {
     return index_;
+}
+
+int PhoneBook::show_all()
+{
+    int i = 0;
+    contact_[i].print_contact(i);
+    return 1;
+}
+
+void Contact::print_contact(int index)
+{   
+    std::cout << std::setw(10) << index << "|";
+    std::cout << std::setw(10) << first_name_.substr(0, 9) << "|";
+    std::cout << std::setw(10) << last_name_.substr(0, 9) << "|";
+    std::cout << std::setw(10) << nickname_.substr(0, 9) << std::endl;
 }
