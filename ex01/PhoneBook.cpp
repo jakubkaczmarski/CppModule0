@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 15:10:30 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/03/28 20:07:32 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/04/03 17:24:11 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,20 @@ int PhoneBook::get_index()
 int PhoneBook::show_all()
 {
     int i = 0;
-    contact_[i].print_contact(i);
+    std::cout << index_ << std::endl;
+    while(i < index_)
+    {
+        contact_[i].print_contact(i);   
+        i++; 
+    }
+    std::cout << std::endl;
     return 1;
 }
-
+void PhoneBook::show_contact(int index)
+{
+    contact_[index].print_contact(index);
+    std::cout << std::endl;
+}
 void Contact::print_contact(int index)
 {   
     std::cout << std::setw(10) << index << "|";

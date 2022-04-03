@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 13:55:40 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/03/28 19:41:20 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/04/03 17:25:02 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ void announce_instruc()
     std::cout << "Enter one of the three commands" << std::endl;
     std::cout << "ADD   ||  SEARCH  || EXIT" << std::endl;
 }
-
 int main()
 {
-   
     PhoneBook phone_book;
+
     std::string command;
     announce_instruc();
+    int index = 0;
     while(std::cin >> command)
     {
         if(command == "ADD")
@@ -61,6 +61,25 @@ int main()
         }else if(command == "SEARCH")
         {
             phone_book.show_all();
+            std::cout << "Chose the one you want to display: " << std::endl;
+         
+            if(phone_book.get_index() == 0)
+            {
+                std::cout << "Nothing to display" << std::endl;
+                announce_instruc();
+                continue;
+            }else{
+                std::cin >> index;
+                if(phone_book.get_index() <  index || index < 0)
+                {
+                    std::cout << "Wrong index \n" << std::endl;
+                    announce_instruc();
+                    continue;
+                }else{
+                    phone_book.show_contact(index);
+                    announce_instruc();
+                }
+            }
         }else if(command == "EXIT")
         {
             break;

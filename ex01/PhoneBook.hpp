@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 14:39:17 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/03/28 20:05:25 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/04/03 17:23:51 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ class PhoneBook{
         void set_secret(std::string darkest_secret);
         int get_index();
         int show_all();
+        void show_contact(int index);
 };
 
 
